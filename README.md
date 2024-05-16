@@ -127,25 +127,35 @@ with open('logistic_regression_model.pkl', 'rb') as f: model = pickle.load(f) fr
 @app.route('/predict_new_one', methods=['POST']) def predict_new_one(): # Get input data from request data = request.json
 
 -#Preprocess input data (if needed)**
+
 -#For example, convert input data to numpy array
+
 -features = np.array(data['features'])
 
 -#Standardize the features
+
 -features_scaled = scaler.transform(features)
 
 -#Make predictions using the loaded model
+
 -predictions = model.predict(features_scaled)
 
 -#Format predictions as JSON response
+
 -response = {'predictions': predictions.tolist()}
 
 -#Create a temporary file to store the JSON data
+
 -temp_file = tempfile.NamedTemporaryFile(delete=False)
+
 -with open(temp_file.name, 'w') as file:
+
 -    json.dump(response, file)
 
 -#Close the temporary file
+
 -temp_file.close()
 
 -#Return the file for download
+
 -return send_file(temp_file.name, as_attachment=True, attachment_filename='predictions.json')
