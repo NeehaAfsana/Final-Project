@@ -142,7 +142,7 @@ with open('logistic_regression_model.pkl', 'rb') as f: model = pickle.load(f) fr
 -#Create a temporary file to store the JSON data
 -temp_file = tempfile.NamedTemporaryFile(delete=False)
 -with open(temp_file.name, 'w') as file:
-  -  json.dump(response, file)
+-    json.dump(response, file)
 
 -#Close the temporary file
 -temp_file.close()
