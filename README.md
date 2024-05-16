@@ -1,5 +1,4 @@
-# Final-Project
-Anoma-Data-Project
+**Anoma-Data-Project**
 AnomaData: Predictive Maintenance Solution utilizing machine learning for automated anomaly detection in equipment, focusing on data exploration, preprocessing, and logistic regression modeling. import pandas as pd import numpy as np import matplotlib.pyplot as plt import seaborn as sns data = pd.read_excel('C:/Users/user/Downloads/AnomaData.xlsx') data.dtypes data.describe() missing_values = data.isnull().sum() missing_values_percentage = (missing_values / len(data)) * 100 missing_values_numeric = missing_values.astype(int)
 
 Handling missing values
